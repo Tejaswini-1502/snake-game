@@ -1,6 +1,7 @@
 from turtle import Screen
 from snake import Snake
 from food import Food
+from scoreboard import Scoreboard
 import time
 
 # setting up the screen
@@ -26,6 +27,7 @@ screen.onkey(key="Right", fun=snake.right)
 
 # move the snake
 game_is_on = True
+score_board = Scoreboard()
 while game_is_on:
     screen.update()
     time.sleep(0.2)
@@ -34,6 +36,9 @@ while game_is_on:
     # detect the collision of the snake with the food
     # dimension of the food 10x10 (keeping extra 5 as buffer)
     if snake.head.distance(food) < 15: # snake.head.distance(food) is the distance of the first segment of the snake from the food
+        # tracking the user's score
+        score_board.update_score()
+
         # food needs to go to a new random location
         food.refresh()
 
