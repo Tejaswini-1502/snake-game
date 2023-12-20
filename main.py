@@ -42,6 +42,9 @@ while game_is_on:
         # food needs to go to a new random location
         food.refresh()
 
+        # extending the body of the snake
+        snake.extend()
+
     # detecting collision with the wall
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         game_is_on = False
