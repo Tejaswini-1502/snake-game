@@ -3,7 +3,6 @@ from turtle import Turtle, Screen
 tim = Turtle()
 screen = Screen()
 
-
 tim.forward(20)
 tim.setheading(90)
 tim.forward(20)
